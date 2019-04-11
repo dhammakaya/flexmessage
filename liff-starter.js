@@ -25,7 +25,8 @@ function initializeApp(data) {
     });
 
     // sendMessages call
-    document.getElementById('sendmessagebutton').addEventListener('click', function () {
+    document.getElementById('sendmessagebutton').addEventListener('click', function (picurl) {
+        var picurl="https://2.bp.blogspot.com/-wc0m24X4URI/XK8EvO6FkbI/AAAAAAACAFI/92BP6dz11Vs4BxgNM5bi0-xlf2DT_oVPwCLcBGAs/s1600/e4755.jpg";
         liff.sendMessages([
         {
             "type": "template",
@@ -35,33 +36,13 @@ function initializeApp(data) {
                 "columns":
                 [
                 {
-                    "thumbnailImageUrl": "https://4.bp.blogspot.com/-OQfdyfuI7ik/XItUynnpTlI/AAAAAAAB_9A/uJyivQdyLEgs9VVZfj1RBql9v-JIgZPAACLcBGAs/s1600/001.jpg",
-                    "title": "Happy Birthday",
-                    "text": "May the Tripple gems bless you.",
+                    "thumbnailImageUrl": picurl,
+                    "title": "Happy Birthday to you",
+                    "text": "Happy Birthday,Wish you Can Eat and Sleep Well, happiness and good health.",
                     "actions": [{
                             "type": "uri",
-                            "label": "HBD Song1",
+                            "label": "HBD Song",
                             "uri": "https://www.youtube.com/watch?v=f3Y9zdMGGtg"
-                      }]
-                },
-                {
-                    "thumbnailImageUrl": "https://3.bp.blogspot.com/-SLFzacc3wdY/XItP9BTD5dI/AAAAAAAB_8s/Se5CxncgFWYNOw8_AXV-8b0Gkibf3WEuQCLcBGAs/s1600/002.jpg",
-                    "title": "Happy Birthday",
-                    "text": "May the Buddha bless you always,May the Dharma guide you.",
-                    "actions": [{
-                            "type": "uri",
-                            "label": "HBD Song2",
-                            "uri": "https://www.youtube.com/watch?v=P3EjRcqfWqw"
-                      }]
-                },
-                {
-                    "thumbnailImageUrl": "https://4.bp.blogspot.com/-uOfAxUjNcFc/XItP8xTKPJI/AAAAAAAB_8k/wSMsj13W_xkVn9zsBQx5p4AGOQ8YDieBQCLcBGAs/s1600/003.jpg",
-                    "title": "Happy Birthday",
-                    "text": "Wishes you be rich, be healthy and peaceful mind.",
-                    "actions": [{
-                            "type": "uri",
-                            "label": "HBD Song3",
-                            "uri": "https://www.youtube.com/watch?v=1kKDcUzxvYs"
                       }]
                 }
                 ],
