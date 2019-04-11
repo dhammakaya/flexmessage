@@ -31,21 +31,21 @@ function initializeApp(data) {
         {
             "type": "template",
             "altText": "HBD",
-            "template": {
+            "template":
+            {
                 "type": "carousel",
                 "columns":
-                [
-                {
-                    "thumbnailImageUrl": "https://2.bp.blogspot.com/-wc0m24X4URI/XK8EvO6FkbI/AAAAAAACAFI/92BP6dz11Vs4BxgNM5bi0-xlf2DT_oVPwCLcBGAs/s1600/e4755.jpg",
+                [{
+                    "thumbnailImageUrl": picurl,
                     "title": "Happy Birthday to you",
-                    "text": "Happy Birthday,Wish you Can Eat and Sleep Well, happiness and good health.",
-                    "actions": [{
+                    "text": "Happy Birthday Wish you Can Eat and Sleep Well. happiness and good health.",
+                    "actions": 
+                    [{
                             "type": "uri",
                             "label": "HBD Song",
                             "uri": "https://www.youtube.com/watch?v=f3Y9zdMGGtg"
-                      }]
-                }
-                ],
+                    }]
+                }],
                 "imageAspectRatio": "rectangle"
             }
         }
