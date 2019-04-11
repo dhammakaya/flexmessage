@@ -30,13 +30,13 @@ function initializeApp(data) {
         liff.sendMessages([
         {
             "type": "template",
-            "altText": "HBD",
+            "altText": "HappyBirthDay",
             "template":
             {
                 "type": "carousel",
                 "columns":
                 [{
-                    "thumbnailImageUrl": picurl,
+                    "thumbnailImageUrl": "https://2.bp.blogspot.com/-wc0m24X4URI/XK8EvO6FkbI/AAAAAAACAFI/92BP6dz11Vs4BxgNM5bi0-xlf2DT_oVPwCLcBGAs/s1600/e4755.jpg",
                     "title": "Happy Birthday to you",
                     "text": "Happy Birthday Wish you Can Eat and Sleep Well. happiness and good health.",
                     "actions": 
