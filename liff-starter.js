@@ -26,8 +26,9 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
+	var youtube_id = document.getElementById('sendmessagebutton').value;
         var picurl = "https://2.bp.blogspot.com/-wc0m24X4URI/XK8EvO6FkbI/AAAAAAACAFI/92BP6dz11Vs4BxgNM5bi0-xlf2DT_oVPwCLcBGAs/s1600/e4755.jpg";
-	var uri_url = "https://www.youtube.com/watch?v="+"<?php echo $uri_url; ?>";
+	var uri_url = "https://www.youtube.com/watch?v="+youtube_id;
         liff.sendMessages([
         {
             "type": "template",
