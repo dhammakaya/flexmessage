@@ -41,8 +41,6 @@ function initializeApp(data) {
 	var text = GET.text;
 	var label = GET.label;
 	var youtube_url = GET.youtube_url;
-        
-
         liff.sendMessages([
         {
             "type": "template",
