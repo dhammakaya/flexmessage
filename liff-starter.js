@@ -4,6 +4,15 @@ window.onload = function (e) {
     });
 };
 
+var GET = {};
+var query = window.location.search.substring(1).split("&");
+for (var i = 0, max = query.length; i < max; i++) {
+if (query[i] === "") // check for trailing & with no param
+  continue;
+  var param = query[i].split("=");
+  GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+}
+
 function initializeApp(data) {
     document.getElementById('languagefield').textContent = data.language;
     document.getElementById('viewtypefield').textContent = data.context.viewType;
@@ -26,26 +35,31 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var youtube_id = document.getElementById('sendmessagebutton').value;
-        var picurl = "https://2.bp.blogspot.com/-wc0m24X4URI/XK8EvO6FkbI/AAAAAAACAFI/92BP6dz11Vs4BxgNM5bi0-xlf2DT_oVPwCLcBGAs/s1600/e4755.jpg";
-	var uri_url = "https://www.youtube.com/watch?v="+youtube_id;
+	var altText = GET.altText;
+	var picture_url = GET.picture_url;
+	var title = GET.title;
+	var text = GET.text;
+	var label = GET.label;
+	var youtube_url = GET.youtube_url;
+        
+
         liff.sendMessages([
         {
             "type": "template",
-            "altText": "HappyBirthDay",
+            "altText": altText,
             "template":
             {
                 "type": "carousel",
                 "columns":
                 [{
-                    "thumbnailImageUrl": picurl,
-                    "title": "Happy Birthday to you",
-                    "text": "Wish you happiness and good health.",
+                    "thumbnailImageUrl": picture_url,
+                    "title": title,
+                    "text": text,
                     "actions": 
                     [{
                             "type": "uri",
-                            "label": "HBD Song",
-                            "uri": uri_url
+                            "label": label,
+                            "uri": youtube_url
                     }]
                 }],
                 "imageAspectRatio": "rectangle"
