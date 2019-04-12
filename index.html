@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php $uri_url=$_GET['uri_url']; ?>
+    <?php $youtube_url=$_GET['youtube_url']; ?>
     <div class="buttongroup">
         <div class="buttonrow">
             <button id="openwindowbutton" class="btn btn-danger">Open Window</button>
@@ -18,7 +18,7 @@
         <div class="buttonrow">
             <button id="getaccesstoken" class="btn btn-info">Get Access Token</button>
             <button id="getprofilebutton" class="btn btn-warning">Get Profile</button>
-            <button id="sendmessagebutton" class="btn btn-success" value="<?php echo $uri_url;?>" >Send Happy birthday Message</button>
+            <button id="sendmessagebutton" class="btn btn-success" value="<?php echo $youtube_url;?>" >Send Happy birthday Message</button>
         </div>
     </div>
 
@@ -86,7 +86,7 @@
     
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script type="text/javascript">
-        alert(<?php echo $uri_url;?>);
+        alert(<?php echo $youtube_url;?>);
     </script>
     <script src="liff-starter.js"></script>
 </body>
