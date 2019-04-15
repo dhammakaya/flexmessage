@@ -197,7 +197,6 @@ function initializeApp(data) {
     "flex": 0
   }
 }
-	  }
 	}
         ]).then(function () {
             // window.alert("Message sent");
