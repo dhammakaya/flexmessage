@@ -35,44 +35,23 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var altText = GET[altText];
-	var FlexImage = GET[FlexImage];
-	var FlexHeader = GET[FlexHeader];
-	var FlexText = GET[FlexText];
-	var FlexLabel = GET[FlexLabel];
-	var FlexLink = GET[FlexLink];
+	var altText = GET['altText'];
+	var FlexImage = GET['FlexImage'];
+	var FlexHeader = GET['FlexHeader'];
+	var FlexText = GET['FlexText'];
+	var FlexLabel = GET['FlexLabel'];
+	var FlexLink = GET['FlexLink'];
 	var cContents = Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl');
         liff.sendMessages([
-        /*{
-          "type": "flex",
-          "altText": altText,
-          "contents": 
-          {
-            "type": "carousel",
-            "contents": cContents
-          }
-        }*/
-	    {
-	      "type": "flex",
-	      "altText": "This is a Flex Message",
-	      "contents": {
-		"type": "bubble",
-		"body": {
-		  "type": "box",
-		  "layout": "horizontal",
-		  "contents": [
-		    {
-		      "type": "text",
-		      "text": "Hello,"
-		    },
-		    {
-		      "type": "text",
-		      "text": "World!"
-		    }
-		  ]
-		}
-	      }
-	    }
+	{
+	  "type": "flex",
+	  "altText": altText,
+	  "contents": 
+	  {
+	    "type": "carousel",
+	    "contents": cContents
+	  }
+	}
         ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
@@ -131,7 +110,7 @@ function toggleElement(elementId) {
 function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, HeaderSize, BodySize) {
     return {
         "type": "bubble",
-        "header": {
+        "header":{
             "type": "box",
             "layout": "vertical",
             "contents": [{
@@ -139,7 +118,6 @@ function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, H
                 "text": FlexHeader,
                 "weight": "bold",
                 "color": "#0061ff",
-                "wrap": true,
                 "size": HeaderSize,
                 "align": "center"
             }]
@@ -157,8 +135,7 @@ function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, H
                 "type": "text",
                 "text": FlexText,
                 "size": BodySize,
-                "color": "#1A4876",
-                "wrap": true
+                "color": "#1A4876"
             }]
         },
         "footer": {
