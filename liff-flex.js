@@ -44,14 +44,23 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var altText = variable[1];
-	var FlexImage = variable[2];
-	var FlexHeader = variable[3];
-	var FlexText = variable[4];
-	var FlexLabel = variable[5];
-	var FlexLink = variable[6];
+	var altText = variables[1];
+	var FlexImage = variables[2];
+	var FlexHeader = variables[3];
+	var FlexText = variables[4];
+	var FlexLabel = variables[5];
+	var FlexLink = variables[6];
+	var cContents = Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl');
         liff.sendMessages([
-	Flex_Center(altText, Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl'))
+        {
+          "type": "flex",
+          "altText": altText,
+          "contents": 
+          {
+            "type": "carousel",
+            "contents": cContents
+          }
+        };
         ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
@@ -105,19 +114,6 @@ function toggleElement(elementId) {
     } else {
         elem.style.display = "block";
     }
-}
-
-function Flex_Center(altText, cContents) {
-    return
-        {
-          "type": "flex",
-          "altText": altText,
-          "contents": 
-          {
-            "type": "carousel",
-            "contents": cContents
-          }
-        };
 }
 
 function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, HeaderSize, BodySize) {
