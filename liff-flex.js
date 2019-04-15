@@ -12,17 +12,6 @@ if (query[i] === "") // check for trailing & with no param
   var param = query[i].split("=");
   GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
 }
-/*
-var m;
-var n=1;
-var variables=[];
-for (m in GET){
- variables[n] = GET[m];
- //alert(m);
- //alert(variables[n]);
- n+=1
-}
-*/
 
 function initializeApp(data) {
     document.getElementById('languagefield').textContent = data.language;
@@ -62,7 +51,7 @@ function initializeApp(data) {
             "type": "carousel",
             "contents": cContents
           }
-        };
+        }
         ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
