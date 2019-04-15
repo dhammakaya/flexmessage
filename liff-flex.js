@@ -116,7 +116,6 @@ function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, H
             "contents": [{
                 "type": "text",
                 "text": FlexHeader,
-                "weight": "bold",
                 "color": "#0061ff",
                 "align": "center"
             }]
@@ -139,7 +138,6 @@ function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, H
             "layout": "vertical",
             "contents": [{
                 "type": "button",
-                "margin": "xl",
                 "action": {
                     "type": "uri",
                     "label": FlexLabel,
