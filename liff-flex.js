@@ -35,12 +35,12 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var altText = GET['altText'];
-	var FlexImage = GET['FlexImage'];
-	var FlexHeader = GET['FlexHeader'];
-	var FlexText = GET['FlexText'];
-	var FlexLabel = GET['FlexLabel'];
-	var FlexLink = GET['FlexLink'];
+	var altText = GET[altText];
+	var FlexImage = GET[FlexImage];
+	var FlexHeader = GET[FlexHeader];
+	var FlexText = GET[FlexText];
+	var FlexLabel = GET[FlexLabel];
+	var FlexLink = GET[FlexLink];
 	var cContents = Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl');
         liff.sendMessages([
 	{
@@ -118,15 +118,12 @@ function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, H
                 "text": FlexHeader,
                 "weight": "bold",
                 "color": "#0061ff",
-                "size": HeaderSize,
                 "align": "center"
             }]
         },
         "hero": {
             "type": "image",
-            "url": FlexImage,
-            "size": "full",
-            "aspectRatio": "4:3"
+            "url": FlexImage
         },
         "body": {
             "type": "box",
@@ -134,7 +131,6 @@ function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, H
             "contents": [{
                 "type": "text",
                 "text": FlexText,
-                "size": BodySize,
                 "color": "#1A4876"
             }]
         },
