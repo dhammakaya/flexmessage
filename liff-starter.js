@@ -12,6 +12,15 @@ if (query[i] === "") // check for trailing & with no param
   var param = query[i].split("=");
   GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
 }
+var m;
+var n=1;
+var variables=[];
+for (m in GET){
+ variables[n] = GET[m];
+ //alert(m);
+ //alert(variables[n]);
+ n+=1
+}
 
 function initializeApp(data) {
     document.getElementById('languagefield').textContent = data.language;
@@ -35,34 +44,14 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var altText = GET.altText;
-	var picture_url = GET.picture_url;
-	var title = GET.title;
-	var text = GET.text;
-	var label = GET.label;
-	var youtube_url = GET.youtube_url;
+	var altText = variable[1];
+	var FlexImage = variable[2];
+	var FlexHeader = variable[3];
+	var FlexText = variable[4];
+	var FlexLabel = variable[5];
+	var FlexLink = variable[6];
         liff.sendMessages([
-        {
-            "type": "template",
-            "altText": altText,
-            "template":
-            {
-                "type": "carousel",
-                "columns":
-                [{
-                    "thumbnailImageUrl": picture_url,
-                    "title": title,
-                    "text": text,
-                    "actions": 
-                    [{
-                            "type": "uri",
-                            "label": label,
-                            "uri": youtube_url
-                    }]
-                }],
-                "imageAspectRatio": "rectangle"
-            }
-        }
+	Flex_Center(altText, Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl'))
         ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
@@ -116,4 +105,67 @@ function toggleElement(elementId) {
     } else {
         elem.style.display = "block";
     }
+}
+
+function Flex_Center(altText, cContents) {
+    return
+        {
+          "type": "flex",
+          "altText": altText,
+          "contents": 
+          {
+            "type": "carousel",
+            "contents": cContents
+          }
+        };
+}
+
+function Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, HeaderSize, BodySize) {
+    return {
+        "type": "bubble",
+        "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "text",
+                "text": FlexHeader,
+                "weight": "bold",
+                "color": "#0061ff",
+                "wrap": true,
+                "size": HeaderSize,
+                "align": "center"
+            }]
+        },
+        "hero": {
+            "type": "image",
+            "url": FlexImage,
+            "size": "full",
+            "aspectRatio": "4:3"
+        },
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "text",
+                "text": FlexText,
+                "size": BodySize,
+                "color": "#1A4876",
+                "wrap": true
+            }]
+        },
+        "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "button",
+                "margin": "xl",
+                "action": {
+                    "type": "uri",
+                    "label": FlexLabel,
+                    "uri": FlexLink
+                },
+                "style": "primary"
+            }]
+        }
+    };
 }
