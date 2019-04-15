@@ -49,7 +49,45 @@ function initializeApp(data) {
 	  "contents": 
 	  {
 	    "type": "carousel",
-	    "contents": cContents
+	    "contents": {
+        "type": "bubble",
+        "header":{
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "text",
+                "text": FlexHeader,
+                "color": "#0061ff",
+                "align": "center"
+            }]
+        },
+        "hero": {
+            "type": "image",
+            "url": FlexImage
+        },
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "text",
+                "text": FlexText,
+                "color": "#1A4876"
+            }]
+        },
+        "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [{
+                "type": "button",
+                "action": {
+                    "type": "uri",
+                    "label": FlexLabel,
+                    "uri": FlexLink
+                },
+                "style": "primary"
+            }]
+        }
+    }
 	  }
 	}
         ]).then(function () {
