@@ -12,6 +12,7 @@ if (query[i] === "") // check for trailing & with no param
   var param = query[i].split("=");
   GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
 }
+/*
 var m;
 var n=1;
 var variables=[];
@@ -21,6 +22,7 @@ for (m in GET){
  //alert(variables[n]);
  n+=1
 }
+*/
 
 function initializeApp(data) {
     document.getElementById('languagefield').textContent = data.language;
@@ -44,12 +46,12 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var altText = variables[1];
-	var FlexImage = variables[2];
-	var FlexHeader = variables[3];
-	var FlexText = variables[4];
-	var FlexLabel = variables[5];
-	var FlexLink = variables[6];
+	var altText = GET[altText];
+	var FlexImage = GET[FlexImage];
+	var FlexHeader = GET[FlexHeader];
+	var FlexText = GET[FlexText];
+	var FlexLabel = GET[FlexLabel];
+	var FlexLink = GET[FlexLink];
 	var cContents = Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl');
         liff.sendMessages([
         {
