@@ -43,7 +43,7 @@ function initializeApp(data) {
 	var FlexLink = GET[FlexLink];
 	var cContents = Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl');
         liff.sendMessages([
-        {
+        /*{
           "type": "flex",
           "altText": altText,
           "contents": 
@@ -51,7 +51,28 @@ function initializeApp(data) {
             "type": "carousel",
             "contents": cContents
           }
-        }
+        }*/
+	    {
+	      "type": "flex",
+	      "altText": "This is a Flex Message",
+	      "contents": {
+		"type": "bubble",
+		"body": {
+		  "type": "box",
+		  "layout": "horizontal",
+		  "contents": [
+		    {
+		      "type": "text",
+		      "text": "Hello,"
+		    },
+		    {
+		      "type": "text",
+		      "text": "World!"
+		    }
+		  ]
+		}
+	      }
+	    }
         ]).then(function () {
             // window.alert("Message sent");
             liff.closeWindow();
