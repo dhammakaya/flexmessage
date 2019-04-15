@@ -35,19 +35,19 @@ function initializeApp(data) {
 
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
-	var altText = GET[altText];
-	var FlexImage = GET[FlexImage];
-	var FlexHeader = GET[FlexHeader];
-	var FlexText = GET[FlexText];
-	var FlexLabel = GET[FlexLabel];
-	var FlexLink = GET[FlexLink];
+	var altText = GET.altText;
+	var FlexImage = GET.FlexImage;
+	var FlexHeader = GET.FlexHeader;
+	var FlexText = GET.FlexText;
+	var FlexLabel = GET.FlexLabel;
+	var FlexLink = GET.FlexLink;
 	var cContents = Box_ImageCenter(FlexHeader, FlexImage, FlexText, FlexLabel, FlexLink, 'md', 'xl');
         liff.sendMessages([
 	{
 	  "type": "flex",
 	  "altText": altText,
 	  "contents": 
-		{
+{
   "type": "bubble",
   "hero": {
     "type": "image",
