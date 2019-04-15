@@ -9,7 +9,7 @@ This is a small web application that demonstrates the basic functionality of the
 
 ## Deploying the application
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dhammakaya/template)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dhammakaya/flexmessage)
 
 1. Click the above "Deploy to Heroku button".
 2. Fill in the required information on the "Create a New App" page in Heroku.
@@ -69,10 +69,10 @@ You can download the starter app to your local machine to test and make changes 
 1. Make sure you have the following installed
     - [Git](https://git-scm.com/)
 
-1. Clone the [template](https://github.com/dhammakaya/template) GitHub repository.
+1. Clone the [template](https://github.com/dhammakaya/flexmessage) GitHub repository.
 
     ```shell
-    git clone https://github.com/dhammakaya/template.git
+    git clone https://github.com/dhammakaya/flexmessage.git
     ```
 
 1. `cd` into your Git directory.
